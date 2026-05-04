@@ -29,9 +29,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .blob-1{width:520px;height:520px;background:rgba(233,30,140,0.07);top:-120px;right:-120px;animation-delay:0s;}
 .blob-2{width:420px;height:420px;background:rgba(180,30,120,0.05);bottom:5%;left:-100px;animation-delay:-10s;}
 @keyframes drift{from{transform:translate(0,0) scale(1);}to{transform:translate(40px,30px) scale(1.08);}}
-.petals{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.petals{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden;}
 .petal{position:absolute;opacity:0;animation:floatPetal linear infinite;}
-@keyframes floatPetal{0%{transform:translateY(-60px) rotate(0deg);opacity:0;}8%{opacity:0.6;}92%{opacity:0.3;}100%{transform:translateY(110vh) rotate(540deg);opacity:0;}}
+@keyframes floatPetal{0%{transform:translateY(-60px) rotate(0deg);opacity:0;}8%{opacity:0.8;}92%{opacity:0.5;}100%{transform:translateY(110vh) rotate(540deg);opacity:0;}}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 56px;z-index:100;backdrop-filter:blur(20px) saturate(1.4);background:linear-gradient(to bottom,rgba(10,0,7,0.85),transparent);border-bottom:1px solid rgba(255,255,255,0.04);}
@@ -389,7 +389,7 @@ for(let i=0;i<14;i++){
   const p=document.createElement('div');p.className='petal';
   const sz=Math.random()*12+7;
   p.style.cssText=`left:${Math.random()*100}%;top:-50px;animation-duration:${Math.random()*14+12}s;animation-delay:${Math.random()*12}s;`;
-  p.innerHTML=`<svg width="${sz}" height="${sz}" viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="5" ry="9" fill="rgba(233,30,140,0.15)" transform="rotate(${Math.random()*360} 10 10)"/></svg>`;
+  p.innerHTML=`<svg width="${sz}" height="${sz}" viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="5" ry="9" fill="rgba(233,30,140,0.25)" transform="rotate(${Math.random()*360} 10 10)"/></svg>`;
   pc.appendChild(p);
 }
 
